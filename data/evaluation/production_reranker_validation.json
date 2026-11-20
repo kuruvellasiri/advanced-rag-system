@@ -1,0 +1,1478 @@
+{
+  "metadata": {
+    "created_at": "2026-11-20T09:17:22.369731+00:00",
+    "dataset_path": "data\\evaluation\\aws_overview_eval.json",
+    "dataset": "AWS Overview whitepaper evaluation",
+    "question_count": 21,
+    "embedding_provider": "local",
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "chroma_collection": "aws_content_local_sentence_transformers_all_minilm_l6_v2",
+    "chroma_count": 512,
+    "reranker_model": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+    "device": "cpu",
+    "candidate_count": 10,
+    "top_k": 5,
+    "vector_weight": 0.5,
+    "keyword_weight": 0.5,
+    "rrf_k": 60,
+    "index_modified": false,
+    "answer_generation_run": false,
+    "latency_method": "Production RerankedHybridSearch.search wall time after embedding and reranker warmup; no LLM calls."
+  },
+  "aggregate": {
+    "questions": 21,
+    "retrieval_questions": 21,
+    "answer_questions": 0,
+    "generation_errors": 0,
+    "retrieval_errors": 0,
+    "answer_evaluation_errors": 0,
+    "retrieval": {
+      "precision_at_k": 0.21904761904761907,
+      "recall_at_k": 1.0,
+      "mrr": 0.9761904761904762,
+      "hit_rate_at_k": 1.0
+    },
+    "answer_estimates": {
+      "answer_relevance": null,
+      "faithfulness": null,
+      "context_relevance": null,
+      "correctness": null
+    },
+    "notes": "Retrieval metrics are deterministic. Answer metrics are optional Gemini-generated estimates, not guaranteed factual judgments.",
+    "latency_ms": {
+      "median": 367.682,
+      "mean": 385.373,
+      "p95": 435.826
+    }
+  },
+  "baseline_reused_from": "data/evaluation/reranking_comparison_results.json#hybrid_baseline",
+  "baseline_retrieval": {
+    "precision_at_k": 0.21904761904761907,
+    "recall_at_k": 1.0,
+    "mrr": 0.8412698412698413,
+    "hit_rate_at_k": 1.0
+  },
+  "baseline_latency_ms": {
+    "retrieval_mean": 16.371,
+    "retrieval_p95": 20.518,
+    "reranking_mean": 0.0,
+    "reranking_p95": 0.0,
+    "total_mean": 16.371,
+    "total_p95": 20.518,
+    "reranking_median": 0.0,
+    "reranking_max": 0.0,
+    "total_median": 15.696,
+    "total_max": 21.482
+  },
+  "experiment_reranked_reference": {
+    "questions": 21,
+    "retrieval_questions": 21,
+    "answer_questions": 0,
+    "generation_errors": 0,
+    "retrieval_errors": 0,
+    "answer_evaluation_errors": 0,
+    "retrieval": {
+      "precision_at_k": 0.21904761904761907,
+      "recall_at_k": 1.0,
+      "mrr": 0.9761904761904762,
+      "hit_rate_at_k": 1.0
+    },
+    "answer_estimates": {
+      "answer_relevance": null,
+      "faithfulness": null,
+      "context_relevance": null,
+      "correctness": null
+    },
+    "notes": "Retrieval metrics are deterministic. Answer metrics are optional Gemini-generated estimates, not guaranteed factual judgments.",
+    "candidate_recall_at_n": 1.0,
+    "reranker_dropped_relevant_chunks": 0,
+    "latency_ms": {
+      "retrieval_mean": 16.735,
+      "retrieval_p95": 19.935,
+      "reranking_mean": 328.365,
+      "reranking_p95": 429.681,
+      "total_mean": 345.099,
+      "total_p95": 445.865,
+      "reranking_median": 324.751,
+      "reranking_max": 486.756,
+      "total_median": 341.85,
+      "total_max": 502.36
+    }
+  },
+  "answer_quality_reused": {
+    "answer_relevance": 1.0,
+    "faithfulness": 1.0,
+    "context_relevance": 1.0,
+    "correctness": 0.9833333333333333
+  },
+  "answer_quality_note": "Reused saved MiniLM n=10 hybrid experiment Gemini estimates; this production validation did not call Gemini.",
+  "questions": [
+    {
+      "question_id": "q01",
+      "question": "What is cloud computing according to the AWS whitepaper?",
+      "relevant_chunk_ids": [
+        "page-0012-chunk-0001"
+      ],
+      "candidate_chunk_ids": [
+        "page-0012-chunk-0001",
+        "page-0014-chunk-0001",
+        "page-0011-chunk-0002",
+        "page-0012-chunk-0002",
+        "page-0011-chunk-0003",
+        "page-0044-chunk-0002",
+        "page-0013-chunk-0001",
+        "page-0011-chunk-0001",
+        "page-0104-chunk-0001",
+        "page-0014-chunk-0002"
+      ],
+      "retrieved_chunk_ids": [
+        "page-0012-chunk-0001",
+        "page-0011-chunk-0002",
+        "page-0014-chunk-0001",
+        "page-0013-chunk-0001",
+        "page-0011-chunk-0001"
+      ],
+      "retrieved_rankings": [
+        {
+          "rank": 1,
+          "chunk_id": "page-0012-chunk-0001",
+          "page_number": 12,
+          "reranker_score": 7.951385498046875
+        },
+        {
+          "rank": 2,
+          "chunk_id": "page-0011-chunk-0002",
+          "page_number": 11,
+          "reranker_score": 5.644412994384766
+        },
+        {
+          "rank": 3,
+          "chunk_id": "page-0014-chunk-0001",
+          "page_number": 14,
+          "reranker_score": 5.614677429199219
+        },
+        {
+          "rank": 4,
+          "chunk_id": "page-0013-chunk-0001",
+          "page_number": 13,
+          "reranker_score": 4.086428642272949
+        },
+        {
+          "rank": 5,
+          "chunk_id": "page-0011-chunk-0001",
+          "page_number": 11,
+          "reranker_score": 2.467650890350342
+        }
+      ],
+      "retrieval_metrics": {
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "hit_rate_at_k": 1.0
+      },
+      "latency_ms": 345.673
+    },
+    {
+      "question_id": "q02",
+      "question": "What are AWS Regions and Availability Zones?",
+      "relevant_chunk_ids": [
+        "page-0015-chunk-0001"
+      ],
+      "candidate_chunk_ids": [
+        "page-0015-chunk-0001",
+        "page-0147-chunk-0002",
+        "page-0051-chunk-0002",
+        "page-0104-chunk-0003",
+        "page-0126-chunk-0001",
+        "page-0051-chunk-0003",
+        "page-0126-chunk-0002",
+        "page-0050-chunk-0004",
+        "page-0054-chunk-0003",
+        "page-0150-chunk-0002"
+      ],
+      "retrieved_chunk_ids": [
+        "page-0015-chunk-0001",
+        "page-0051-chunk-0003",
+        "page-0126-chunk-0001",
+        "page-0051-chunk-0002",
+        "page-0147-chunk-0002"
+      ],
+      "retrieved_rankings": [
+        {
+          "rank": 1,
+          "chunk_id": "page-0015-chunk-0001",
+          "page_number": 15,
+          "reranker_score": 9.348316192626953
+        },
+        {
+          "rank": 2,
+          "chunk_id": "page-0051-chunk-0003",
+          "page_number": 51,
+          "reranker_score": 4.780667304992676
+        },
+        {
+          "rank": 3,
+          "chunk_id": "page-0126-chunk-0001",
+          "page_number": 126,
+          "reranker_score": 4.6915059089660645
+        },
+        {
+          "rank": 4,
+          "chunk_id": "page-0051-chunk-0002",
+          "page_number": 51,
+          "reranker_score": 4.04681396484375
+        },
+        {
+          "rank": 5,
+          "chunk_id": "page-0147-chunk-0002",
+          "page_number": 147,
+          "reranker_score": 2.6512985229492188
+        }
+      ],
+      "retrieval_metrics": {
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "hit_rate_at_k": 1.0
+      },
+      "latency_ms": 416.047
+    },
+    {
+      "question_id": "q03",
+      "question": "What is Amazon EC2?",
+      "relevant_chunk_ids": [
+        "page-0044-chunk-0002"
+      ],
+      "candidate_chunk_ids": [
+        "page-0044-chunk-0002",
+        "page-0044-chunk-0001",
+        "page-0046-chunk-0003",
+        "page-0084-chunk-0005",
+        "page-0044-chunk-0003",
+        "page-0041-chunk-0001",
+        "page-0054-chunk-0002",
+        "page-0001-chunk-0001",
+        "page-0046-chunk-0004",
+        "page-0012-chunk-0002"
+      ],
+      "retrieved_chunk_ids": [
+        "page-0044-chunk-0002",
+        "page-0044-chunk-0003",
+        "page-0046-chunk-0003",
+        "page-0044-chunk-0001",
+        "page-0054-chunk-0002"
+      ],
+      "retrieved_rankings": [
+        {
+          "rank": 1,
+          "chunk_id": "page-0044-chunk-0002",
+          "page_number": 44,
+          "reranker_score": 9.965246200561523
+        },
+        {
+          "rank": 2,
+          "chunk_id": "page-0044-chunk-0003",
+          "page_number": 44,
+          "reranker_score": 7.264913082122803
+        },
+        {
+          "rank": 3,
+          "chunk_id": "page-0046-chunk-0003",
+          "page_number": 46,
+          "reranker_score": 5.904135704040527
+        },
+        {
+          "rank": 4,
+          "chunk_id": "page-0044-chunk-0001",
+          "page_number": 44,
+          "reranker_score": 5.331375598907471
+        },
+        {
+          "rank": 5,
+          "chunk_id": "page-0054-chunk-0002",
+          "page_number": 54,
+          "reranker_score": 4.411649703979492
+        }
+      ],
+      "retrieval_metrics": {
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "hit_rate_at_k": 1.0
+      },
+      "latency_ms": 308.936
+    },
+    {
+      "question_id": "q04",
+      "question": "What is Amazon S3?",
+      "relevant_chunk_ids": [
+        "page-0149-chunk-0003",
+        "page-0149-chunk-0004"
+      ],
+      "candidate_chunk_ids": [
+        "page-0150-chunk-0001",
+        "page-0149-chunk-0004",
+        "page-0150-chunk-0002",
+        "page-0148-chunk-0002",
+        "page-0028-chunk-0002",
+        "page-0150-chunk-0003",
+        "page-0149-chunk-0003",
+        "page-0136-chunk-0001",
+        "page-0001-chunk-0001",
+        "page-0084-chunk-0005"
+      ],
+      "retrieved_chunk_ids": [
+        "page-0149-chunk-0004",
+        "page-0150-chunk-0001",
+        "page-0149-chunk-0003",
+        "page-0150-chunk-0003",
+        "page-0136-chunk-0001"
+      ],
+      "retrieved_rankings": [
+        {
+          "rank": 1,
+          "chunk_id": "page-0149-chunk-0004",
+          "page_number": 149,
+          "reranker_score": 7.495725154876709
+        },
+        {
+          "rank": 2,
+          "chunk_id": "page-0150-chunk-0001",
+          "page_number": 150,
+          "reranker_score": 7.132742881774902
+        },
+        {
+          "rank": 3,
+          "chunk_id": "page-0149-chunk-0003",
+          "page_number": 149,
+          "reranker_score": 6.250609874725342
+        },
+        {
+          "rank": 4,
+          "chunk_id": "page-0150-chunk-0003",
+          "page_number": 150,
+          "reranker_score": 4.293430805206299
+        },
+        {
+          "rank": 5,
+          "chunk_id": "page-0136-chunk-0001",
+          "page_number": 136,
+          "reranker_score": 3.83695125579834
+        }
+      ],
+      "retrieval_metrics": {
+        "precision_at_k": 0.4,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "hit_rate_at_k": 1.0
+      },
+      "latency_ms": 393.37
+    },
+    {
+      "question_id": "q05",
+      "question": "What is AWS Lambda?",
+      "relevant_chunk_ids": [
+        "page-0049-chunk-0003"
+      ],
+      "candidate_chunk_ids": [
+        "page-0049-chunk-0003",
+        "page-0049-chunk-0004",
+        "page-0084-chunk-0005",
+        "page-0011-chunk-0003",
+        "page-0041-chunk-0001",
+        "page-0024-chunk-0004",
+        "page-0154-chunk-0001",
+        "page-0012-chunk-0002",
+        "page-0111-chunk-0003",
+        "page-0043-chunk-0001"
+      ],
+      "retrieved_chunk_ids": [
+        "page-0049-chunk-0003",
+        "page-0043-chunk-0001",
+        "page-0049-chunk-0004",
+        "page-0024-chunk-0004",
+        "page-0041-chunk-0001"
+      ],
+      "retrieved_rankings": [
+        {
+          "rank": 1,
+          "chunk_id": "page-0049-chunk-0003",
+          "page_number": 49,
+          "reranker_score": 4.266146659851074
+        },
+        {
+          "rank": 2,
+          "chunk_id": "page-0043-chunk-0001",
+          "page_number": 43,
+          "reranker_score": 4.16574239730835
+        },
+        {
+          "rank": 3,
+          "chunk_id": "page-0049-chunk-0004",
+          "page_number": 49,
+          "reranker_score": 3.3019063472747803
+        },
+        {
+          "rank": 4,
+          "chunk_id": "page-0024-chunk-0004",
+          "page_number": 24,
+          "reranker_score": 1.5968742370605469
+        },
+        {
+          "rank": 5,
+          "chunk_id": "page-0041-chunk-0001",
+          "page_number": 41,
+          "reranker_score": 1.4670236110687256
+        }
+      ],
+      "retrieval_metrics": {
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "hit_rate_at_k": 1.0
+      },
+      "latency_ms": 354.147
+    },
+    {
+      "question_id": "q06",
+      "question": "What is Amazon RDS?",
+      "relevant_chunk_ids": [
+        "page-0062-chunk-0001"
+      ],
+      "candidate_chunk_ids": [
+        "page-0062-chunk-0001",
+        "page-0062-chunk-0004",
+        "page-0058-chunk-0002",
+        "page-0062-chunk-0003",
+        "page-0001-chunk-0001",
+        "page-0062-chunk-0002",
+        "page-0002-chunk-0001",
+        "page-0011-chunk-0001",
+        "page-0056-chunk-0001",
+        "page-0082-chunk-0001"
+      ],
+      "retrieved_chunk_ids": [
+        "page-0062-chunk-0001",
+        "page-0062-chunk-0003",
+        "page-0062-chunk-0004",
+        "page-0062-chunk-0002",
+        "page-0058-chunk-0002"
+      ],
+      "retrieved_rankings": [
+        {
+          "rank": 1,
+          "chunk_id": "page-0062-chunk-0001",
+          "page_number": 62,
+          "reranker_score": 8.06158447265625
+        },
+        {
+          "rank": 2,
+          "chunk_id": "page-0062-chunk-0003",
+          "page_number": 62,
+          "reranker_score": 7.0951433181762695
+        },
+        {
+          "rank": 3,
+          "chunk_id": "page-0062-chunk-0004",
+          "page_number": 62,
+          "reranker_score": 6.057756423950195
+        },
+        {
+          "rank": 4,
+          "chunk_id": "page-0062-chunk-0002",
+          "page_number": 62,
+          "reranker_score": 5.713572025299072
+        },
+        {
+          "rank": 5,
+          "chunk_id": "page-0058-chunk-0002",
+          "page_number": 58,
+          "reranker_score": 4.68216609954834
+        }
+      ],
+      "retrieval_metrics": {
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "hit_rate_at_k": 1.0
+      },
+      "latency_ms": 405.475
+    },
+    {
+      "question_id": "q07",
+      "question": "What is Amazon DynamoDB?",
+      "relevant_chunk_ids": [
+        "page-0059-chunk-0002"
+      ],
+      "candidate_chunk_ids": [
+        "page-0059-chunk-0003",
+        "page-0059-chunk-0002",
+        "page-0057-chunk-0002",
+        "page-0059-chunk-0004",
+        "page-0056-chunk-0001",
+        "page-0057-chunk-0001",
+        "page-0058-chunk-0001",
+        "page-0084-chunk-0005",
+        "page-0012-chunk-0002",
+        "page-0058-chunk-0002"
+      ],
+      "retrieved_chunk_ids": [
+        "page-0059-chunk-0002",
+        "page-0057-chunk-0002",
+        "page-0059-chunk-0003",
+        "page-0059-chunk-0004",
+        "page-0056-chunk-0001"
+      ],
+      "retrieved_rankings": [
+        {
+          "rank": 1,
+          "chunk_id": "page-0059-chunk-0002",
+          "page_number": 59,
+          "reranker_score": 7.782546043395996
+        },
+        {
+          "rank": 2,
+          "chunk_id": "page-0057-chunk-0002",
+          "page_number": 57,
+          "reranker_score": 6.92529296875
+        },
+        {
+          "rank": 3,
+          "chunk_id": "page-0059-chunk-0003",
+          "page_number": 59,
+          "reranker_score": 5.50852108001709
+        },
+        {
+          "rank": 4,
+          "chunk_id": "page-0059-chunk-0004",
+          "page_number": 59,
+          "reranker_score": 5.457064628601074
+        },
+        {
+          "rank": 5,
+          "chunk_id": "page-0056-chunk-0001",
+          "page_number": 56,
+          "reranker_score": 2.5304691791534424
+        }
+      ],
+      "retrieval_metrics": {
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "hit_rate_at_k": 1.0
+      },
+      "latency_ms": 591.645
+    },
+    {
+      "question_id": "q08",
+      "question": "What is Amazon VPC?",
+      "relevant_chunk_ids": [
+        "page-0128-chunk-0004"
+      ],
+      "candidate_chunk_ids": [
+        "page-0129-chunk-0001",
+        "page-0125-chunk-0002",
+        "page-0128-chunk-0004",
+        "page-0128-chunk-0003",
+        "page-0001-chunk-0001",
+        "page-0128-chunk-0002",
+        "page-0122-chunk-0001",
+        "page-0141-chunk-0001",
+        "page-0011-chunk-0001",
+        "page-0129-chunk-0003"
+      ],
+      "retrieved_chunk_ids": [
+        "page-0128-chunk-0004",
+        "page-0129-chunk-0003",
+        "page-0129-chunk-0001",
+        "page-0122-chunk-0001",
+        "page-0128-chunk-0003"
+      ],
+      "retrieved_rankings": [
+        {
+          "rank": 1,
+          "chunk_id": "page-0128-chunk-0004",
+          "page_number": 128,
+          "reranker_score": 7.167264938354492
+        },
+        {
+          "rank": 2,
+          "chunk_id": "page-0129-chunk-0003",
+          "page_number": 129,
+          "reranker_score": 5.651125907897949
+        },
+        {
+          "rank": 3,
+          "chunk_id": "page-0129-chunk-0001",
+          "page_number": 129,
+          "reranker_score": 5.005990505218506
+        },
+        {
+          "rank": 4,
+          "chunk_id": "page-0122-chunk-0001",
+          "page_number": 122,
+          "reranker_score": 4.692539215087891
+        },
+        {
+          "rank": 5,
+          "chunk_id": "page-0128-chunk-0003",
+          "page_number": 128,
+          "reranker_score": 4.276937961578369
+        }
+      ],
+      "retrieval_metrics": {
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "hit_rate_at_k": 1.0
+      },
+      "latency_ms": 352.331
+    },
+    {
+      "question_id": "q09",
+      "question": "What does AWS Identity and Access Management (IAM) do?",
+      "relevant_chunk_ids": [
+        "page-0139-chunk-0003"
+      ],
+      "candidate_chunk_ids": [
+        "page-0139-chunk-0004",
+        "page-0139-chunk-0003",
+        "page-0143-chunk-0005",
+        "page-0140-chunk-0002",
+        "page-0143-chunk-0004",
+        "page-0110-chunk-0005",
+        "page-0110-chunk-0004",
+        "page-0140-chunk-0001",
+        "page-0127-chunk-0002",
+        "page-0143-chunk-0003"
+      ],
+      "retrieved_chunk_ids": [
+        "page-0139-chunk-0003",
+        "page-0110-chunk-0005",
+        "page-0139-chunk-0004",
+        "page-0110-chunk-0004",
+        "page-0140-chunk-0002"
+      ],
+      "retrieved_rankings": [
+        {
+          "rank": 1,
+          "chunk_id": "page-0139-chunk-0003",
+          "page_number": 139,
+          "reranker_score": 9.7889404296875
+        },
+        {
+          "rank": 2,
+          "chunk_id": "page-0110-chunk-0005",
+          "page_number": 110,
+          "reranker_score": 8.619075775146484
+        },
+        {
+          "rank": 3,
+          "chunk_id": "page-0139-chunk-0004",
+          "page_number": 139,
+          "reranker_score": 7.823720932006836
+        },
+        {
+          "rank": 4,
+          "chunk_id": "page-0110-chunk-0004",
+          "page_number": 110,
+          "reranker_score": 7.670848846435547
+        },
+        {
+          "rank": 5,
+          "chunk_id": "page-0140-chunk-0002",
+          "page_number": 140,
+          "reranker_score": 6.402705192565918
+        }
+      ],
+      "retrieval_metrics": {
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "hit_rate_at_k": 1.0
+      },
+      "latency_ms": 366.281
+    },
+    {
+      "question_id": "q10",
+      "question": "What is Amazon CloudFront?",
+      "relevant_chunk_ids": [
+        "page-0123-chunk-0002",
+        "page-0123-chunk-0003"
+      ],
+      "candidate_chunk_ids": [
+        "page-0123-chunk-0003",
+        "page-0123-chunk-0002",
+        "page-0123-chunk-0004",
+        "page-0143-chunk-0002",
+        "page-0012-chunk-0001",
+        "page-0011-chunk-0002",
+        "page-0143-chunk-0001",
+        "page-0011-chunk-0003",
+        "page-0121-chunk-0002",
+        "page-0011-chunk-0001"
+      ],
+      "retrieved_chunk_ids": [
+        "page-0123-chunk-0002",
+        "page-0123-chunk-0003",
+        "page-0012-chunk-0001",
+        "page-0123-chunk-0004",
+        "page-0011-chunk-0002"
+      ],
+      "retrieved_rankings": [
+        {
+          "rank": 1,
+          "chunk_id": "page-0123-chunk-0002",
+          "page_number": 123,
+          "reranker_score": 6.058287620544434
+        },
+        {
+          "rank": 2,
+          "chunk_id": "page-0123-chunk-0003",
+          "page_number": 123,
+          "reranker_score": 5.528730869293213
+        },
+        {
+          "rank": 3,
+          "chunk_id": "page-0012-chunk-0001",
+          "page_number": 12,
+          "reranker_score": 4.640313148498535
+        },
+        {
+          "rank": 4,
+          "chunk_id": "page-0123-chunk-0004",
+          "page_number": 123,
+          "reranker_score": 3.806544780731201
+        },
+        {
+          "rank": 5,
+          "chunk_id": "page-0011-chunk-0002",
+          "page_number": 11,
+          "reranker_score": 1.6957833766937256
+        }
+      ],
+      "retrieval_metrics": {
+        "precision_at_k": 0.4,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "hit_rate_at_k": 1.0
+      },
+      "latency_ms": 334.173
+    },
+    {
+      "question_id": "q11",
+      "question": "What is Amazon SQS?",
+      "relevant_chunk_ids": [
+        "page-0033-chunk-0002"
+      ],
+      "candidate_chunk_ids": [
+        "page-0033-chunk-0002",
+        "page-0033-chunk-0001",
+        "page-0001-chunk-0001",
+        "page-0033-chunk-0003",
+        "page-0002-chunk-0001",
+        "page-0029-chunk-0002",
+        "page-0011-chunk-0001",
+        "page-0084-chunk-0005",
+        "page-0090-chunk-0002",
+        "page-0051-chunk-0003"
+      ],
+      "retrieved_chunk_ids": [
+        "page-0033-chunk-0002",
+        "page-0033-chunk-0003",
+        "page-0033-chunk-0001",
+        "page-0029-chunk-0002",
+        "page-0051-chunk-0003"
+      ],
+      "retrieved_rankings": [
+        {
+          "rank": 1,
+          "chunk_id": "page-0033-chunk-0002",
+          "page_number": 33,
+          "reranker_score": 8.987918853759766
+        },
+        {
+          "rank": 2,
+          "chunk_id": "page-0033-chunk-0003",
+          "page_number": 33,
+          "reranker_score": 4.064645767211914
+        },
+        {
+          "rank": 3,
+          "chunk_id": "page-0033-chunk-0001",
+          "page_number": 33,
+          "reranker_score": 2.502929210662842
+        },
+        {
+          "rank": 4,
+          "chunk_id": "page-0029-chunk-0002",
+          "page_number": 29,
+          "reranker_score": -1.0772048234939575
+        },
+        {
+          "rank": 5,
+          "chunk_id": "page-0051-chunk-0003",
+          "page_number": 51,
+          "reranker_score": -1.3697718381881714
+        }
+      ],
+      "retrieval_metrics": {
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "hit_rate_at_k": 1.0
+      },
+      "latency_ms": 418.251
+    },
+    {
+      "question_id": "q12",
+      "question": "What is Amazon SNS?",
+      "relevant_chunk_ids": [
+        "page-0033-chunk-0001"
+      ],
+      "candidate_chunk_ids": [
+        "page-0033-chunk-0001",
+        "page-0001-chunk-0001",
+        "page-0029-chunk-0002",
+        "page-0002-chunk-0001",
+        "page-0039-chunk-0004",
+        "page-0084-chunk-0005",
+        "page-0127-chunk-0003",
+        "page-0075-chunk-0002",
+        "page-0127-chunk-0004",
+        "page-0076-chunk-0003"
+      ],
+      "retrieved_chunk_ids": [
+        "page-0033-chunk-0001",
+        "page-0127-chunk-0003",
+        "page-0075-chunk-0002",
+        "page-0039-chunk-0004",
+        "page-0029-chunk-0002"
+      ],
+      "retrieved_rankings": [
+        {
+          "rank": 1,
+          "chunk_id": "page-0033-chunk-0001",
+          "page_number": 33,
+          "reranker_score": 9.720484733581543
+        },
+        {
+          "rank": 2,
+          "chunk_id": "page-0127-chunk-0003",
+          "page_number": 127,
+          "reranker_score": 3.609947919845581
+        },
+        {
+          "rank": 3,
+          "chunk_id": "page-0075-chunk-0002",
+          "page_number": 75,
+          "reranker_score": 1.1793153285980225
+        },
+        {
+          "rank": 4,
+          "chunk_id": "page-0039-chunk-0004",
+          "page_number": 39,
+          "reranker_score": -0.3313301205635071
+        },
+        {
+          "rank": 5,
+          "chunk_id": "page-0029-chunk-0002",
+          "page_number": 29,
+          "reranker_score": -0.9713290333747864
+        }
+      ],
+      "retrieval_metrics": {
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "hit_rate_at_k": 1.0
+      },
+      "latency_ms": 363.858
+    },
+    {
+      "question_id": "q13",
+      "question": "What does Elastic Load Balancing do?",
+      "relevant_chunk_ids": [
+        "page-0124-chunk-0004"
+      ],
+      "candidate_chunk_ids": [
+        "page-0124-chunk-0004",
+        "page-0125-chunk-0001",
+        "page-0143-chunk-0003",
+        "page-0125-chunk-0002",
+        "page-0048-chunk-0004",
+        "page-0044-chunk-0001",
+        "page-0143-chunk-0002",
+        "page-0125-chunk-0003",
+        "page-0044-chunk-0002",
+        "page-0046-chunk-0004"
+      ],
+      "retrieved_chunk_ids": [
+        "page-0124-chunk-0004",
+        "page-0143-chunk-0003",
+        "page-0048-chunk-0004",
+        "page-0044-chunk-0001",
+        "page-0125-chunk-0003"
+      ],
+      "retrieved_rankings": [
+        {
+          "rank": 1,
+          "chunk_id": "page-0124-chunk-0004",
+          "page_number": 124,
+          "reranker_score": 7.107845306396484
+        },
+        {
+          "rank": 2,
+          "chunk_id": "page-0143-chunk-0003",
+          "page_number": 143,
+          "reranker_score": 3.6778130531311035
+        },
+        {
+          "rank": 3,
+          "chunk_id": "page-0048-chunk-0004",
+          "page_number": 48,
+          "reranker_score": 2.8519601821899414
+        },
+        {
+          "rank": 4,
+          "chunk_id": "page-0044-chunk-0001",
+          "page_number": 44,
+          "reranker_score": 1.4138152599334717
+        },
+        {
+          "rank": 5,
+          "chunk_id": "page-0125-chunk-0003",
+          "page_number": 125,
+          "reranker_score": 0.49523264169692993
+        }
+      ],
+      "retrieval_metrics": {
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "hit_rate_at_k": 1.0
+      },
+      "latency_ms": 409.414
+    },
+    {
+      "question_id": "q14",
+      "question": "What is AWS Glue?",
+      "relevant_chunk_ids": [
+        "page-0027-chunk-0003"
+      ],
+      "candidate_chunk_ids": [
+        "page-0027-chunk-0003",
+        "page-0027-chunk-0004",
+        "page-0027-chunk-0002",
+        "page-0021-chunk-0001",
+        "page-0054-chunk-0002",
+        "page-0021-chunk-0002",
+        "page-0054-chunk-0004",
+        "page-0022-chunk-0001",
+        "page-0144-chunk-0001",
+        "page-0084-chunk-0005"
+      ],
+      "retrieved_chunk_ids": [
+        "page-0027-chunk-0003",
+        "page-0027-chunk-0004",
+        "page-0027-chunk-0002",
+        "page-0021-chunk-0001",
+        "page-0021-chunk-0002"
+      ],
+      "retrieved_rankings": [
+        {
+          "rank": 1,
+          "chunk_id": "page-0027-chunk-0003",
+          "page_number": 27,
+          "reranker_score": 9.439002990722656
+        },
+        {
+          "rank": 2,
+          "chunk_id": "page-0027-chunk-0004",
+          "page_number": 27,
+          "reranker_score": 5.386144638061523
+        },
+        {
+          "rank": 3,
+          "chunk_id": "page-0027-chunk-0002",
+          "page_number": 27,
+          "reranker_score": 4.267114162445068
+        },
+        {
+          "rank": 4,
+          "chunk_id": "page-0021-chunk-0001",
+          "page_number": 21,
+          "reranker_score": 2.4717917442321777
+        },
+        {
+          "rank": 5,
+          "chunk_id": "page-0021-chunk-0002",
+          "page_number": 21,
+          "reranker_score": 2.045337677001953
+        }
+      ],
+      "retrieval_metrics": {
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "hit_rate_at_k": 1.0
+      },
+      "latency_ms": 433.287
+    },
+    {
+      "question_id": "q15",
+      "question": "Which AWS service analyzes data in Amazon S3 using standard SQL?",
+      "relevant_chunk_ids": [
+        "page-0021-chunk-0001"
+      ],
+      "candidate_chunk_ids": [
+        "page-0021-chunk-0001",
+        "page-0150-chunk-0002",
+        "page-0150-chunk-0001",
+        "page-0026-chunk-0003",
+        "page-0124-chunk-0003",
+        "page-0057-chunk-0001",
+        "page-0023-chunk-0004",
+        "page-0027-chunk-0004",
+        "page-0025-chunk-0002",
+        "page-0136-chunk-0001"
+      ],
+      "retrieved_chunk_ids": [
+        "page-0021-chunk-0001",
+        "page-0026-chunk-0003",
+        "page-0023-chunk-0004",
+        "page-0025-chunk-0002",
+        "page-0136-chunk-0001"
+      ],
+      "retrieved_rankings": [
+        {
+          "rank": 1,
+          "chunk_id": "page-0021-chunk-0001",
+          "page_number": 21,
+          "reranker_score": 8.265165328979492
+        },
+        {
+          "rank": 2,
+          "chunk_id": "page-0026-chunk-0003",
+          "page_number": 26,
+          "reranker_score": 3.9579403400421143
+        },
+        {
+          "rank": 3,
+          "chunk_id": "page-0023-chunk-0004",
+          "page_number": 23,
+          "reranker_score": 3.1243088245391846
+        },
+        {
+          "rank": 4,
+          "chunk_id": "page-0025-chunk-0002",
+          "page_number": 25,
+          "reranker_score": 2.8597655296325684
+        },
+        {
+          "rank": 5,
+          "chunk_id": "page-0136-chunk-0001",
+          "page_number": 136,
+          "reranker_score": 2.30159068107605
+        }
+      ],
+      "retrieval_metrics": {
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "hit_rate_at_k": 1.0
+      },
+      "latency_ms": 435.826
+    },
+    {
+      "question_id": "q16",
+      "question": "What is Amazon Elastic Block Store (Amazon EBS)?",
+      "relevant_chunk_ids": [
+        "page-0146-chunk-0002"
+      ],
+      "candidate_chunk_ids": [
+        "page-0146-chunk-0002",
+        "page-0053-chunk-0002",
+        "page-0054-chunk-0001",
+        "page-0146-chunk-0001",
+        "page-0147-chunk-0001",
+        "page-0145-chunk-0001",
+        "page-0147-chunk-0002",
+        "page-0001-chunk-0001",
+        "page-0146-chunk-0003",
+        "page-0002-chunk-0001"
+      ],
+      "retrieved_chunk_ids": [
+        "page-0146-chunk-0002",
+        "page-0053-chunk-0002",
+        "page-0145-chunk-0001",
+        "page-0147-chunk-0001",
+        "page-0146-chunk-0001"
+      ],
+      "retrieved_rankings": [
+        {
+          "rank": 1,
+          "chunk_id": "page-0146-chunk-0002",
+          "page_number": 146,
+          "reranker_score": 8.456785202026367
+        },
+        {
+          "rank": 2,
+          "chunk_id": "page-0053-chunk-0002",
+          "page_number": 53,
+          "reranker_score": 3.9194774627685547
+        },
+        {
+          "rank": 3,
+          "chunk_id": "page-0145-chunk-0001",
+          "page_number": 145,
+          "reranker_score": 3.541653633117676
+        },
+        {
+          "rank": 4,
+          "chunk_id": "page-0147-chunk-0001",
+          "page_number": 147,
+          "reranker_score": 3.1657638549804688
+        },
+        {
+          "rank": 5,
+          "chunk_id": "page-0146-chunk-0001",
+          "page_number": 146,
+          "reranker_score": 2.5351057052612305
+        }
+      ],
+      "retrieval_metrics": {
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "hit_rate_at_k": 1.0
+      },
+      "latency_ms": 320.063
+    },
+    {
+      "question_id": "q17",
+      "question": "What is Amazon EKS?",
+      "relevant_chunk_ids": [
+        "page-0054-chunk-0003"
+      ],
+      "candidate_chunk_ids": [
+        "page-0054-chunk-0003",
+        "page-0042-chunk-0002",
+        "page-0001-chunk-0001",
+        "page-0054-chunk-0002",
+        "page-0002-chunk-0001",
+        "page-0084-chunk-0005",
+        "page-0022-chunk-0002",
+        "page-0082-chunk-0001",
+        "page-0123-chunk-0002",
+        "page-0011-chunk-0001"
+      ],
+      "retrieved_chunk_ids": [
+        "page-0054-chunk-0003",
+        "page-0042-chunk-0002",
+        "page-0054-chunk-0002",
+        "page-0022-chunk-0002",
+        "page-0123-chunk-0002"
+      ],
+      "retrieved_rankings": [
+        {
+          "rank": 1,
+          "chunk_id": "page-0054-chunk-0003",
+          "page_number": 54,
+          "reranker_score": 7.458246231079102
+        },
+        {
+          "rank": 2,
+          "chunk_id": "page-0042-chunk-0002",
+          "page_number": 42,
+          "reranker_score": 5.022732257843018
+        },
+        {
+          "rank": 3,
+          "chunk_id": "page-0054-chunk-0002",
+          "page_number": 54,
+          "reranker_score": 4.662110328674316
+        },
+        {
+          "rank": 4,
+          "chunk_id": "page-0022-chunk-0002",
+          "page_number": 22,
+          "reranker_score": 3.679408073425293
+        },
+        {
+          "rank": 5,
+          "chunk_id": "page-0123-chunk-0002",
+          "page_number": 123,
+          "reranker_score": 2.725463390350342
+        }
+      ],
+      "retrieval_metrics": {
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "hit_rate_at_k": 1.0
+      },
+      "latency_ms": 367.682
+    },
+    {
+      "question_id": "q18",
+      "question": "What is AWS Fargate?",
+      "relevant_chunk_ids": [
+        "page-0049-chunk-0001"
+      ],
+      "candidate_chunk_ids": [
+        "page-0049-chunk-0001",
+        "page-0043-chunk-0001",
+        "page-0011-chunk-0003",
+        "page-0041-chunk-0001",
+        "page-0151-chunk-0001",
+        "page-0049-chunk-0004",
+        "page-0084-chunk-0005",
+        "page-0040-chunk-0003",
+        "page-0154-chunk-0001",
+        "page-0001-chunk-0001"
+      ],
+      "retrieved_chunk_ids": [
+        "page-0049-chunk-0001",
+        "page-0043-chunk-0001",
+        "page-0040-chunk-0003",
+        "page-0041-chunk-0001",
+        "page-0049-chunk-0004"
+      ],
+      "retrieved_rankings": [
+        {
+          "rank": 1,
+          "chunk_id": "page-0049-chunk-0001",
+          "page_number": 49,
+          "reranker_score": 9.229642868041992
+        },
+        {
+          "rank": 2,
+          "chunk_id": "page-0043-chunk-0001",
+          "page_number": 43,
+          "reranker_score": 4.664036273956299
+        },
+        {
+          "rank": 3,
+          "chunk_id": "page-0040-chunk-0003",
+          "page_number": 40,
+          "reranker_score": 2.506059408187866
+        },
+        {
+          "rank": 4,
+          "chunk_id": "page-0041-chunk-0001",
+          "page_number": 41,
+          "reranker_score": 2.2640273571014404
+        },
+        {
+          "rank": 5,
+          "chunk_id": "page-0049-chunk-0004",
+          "page_number": 49,
+          "reranker_score": 2.106070041656494
+        }
+      ],
+      "retrieval_metrics": {
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "hit_rate_at_k": 1.0
+      },
+      "latency_ms": 329.133
+    },
+    {
+      "question_id": "q19",
+      "question": "What is the difference between Amazon SQS Standard queues and FIFO queues?",
+      "relevant_chunk_ids": [
+        "page-0033-chunk-0003"
+      ],
+      "candidate_chunk_ids": [
+        "page-0033-chunk-0003",
+        "page-0033-chunk-0001",
+        "page-0033-chunk-0002",
+        "page-0124-chunk-0002",
+        "page-0149-chunk-0003",
+        "page-0039-chunk-0001",
+        "page-0104-chunk-0001",
+        "page-0038-chunk-0001",
+        "page-0124-chunk-0001",
+        "page-0067-chunk-0001"
+      ],
+      "retrieved_chunk_ids": [
+        "page-0033-chunk-0003",
+        "page-0033-chunk-0002",
+        "page-0033-chunk-0001",
+        "page-0124-chunk-0001",
+        "page-0149-chunk-0003"
+      ],
+      "retrieved_rankings": [
+        {
+          "rank": 1,
+          "chunk_id": "page-0033-chunk-0003",
+          "page_number": 33,
+          "reranker_score": 6.964710235595703
+        },
+        {
+          "rank": 2,
+          "chunk_id": "page-0033-chunk-0002",
+          "page_number": 33,
+          "reranker_score": 2.500211477279663
+        },
+        {
+          "rank": 3,
+          "chunk_id": "page-0033-chunk-0001",
+          "page_number": 33,
+          "reranker_score": -2.6327319145202637
+        },
+        {
+          "rank": 4,
+          "chunk_id": "page-0124-chunk-0001",
+          "page_number": 124,
+          "reranker_score": -6.199345588684082
+        },
+        {
+          "rank": 5,
+          "chunk_id": "page-0149-chunk-0003",
+          "page_number": 149,
+          "reranker_score": -7.598470211029053
+        }
+      ],
+      "retrieval_metrics": {
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "hit_rate_at_k": 1.0
+      },
+      "latency_ms": 433.996
+    },
+    {
+      "question_id": "q20",
+      "question": "What is the AWS Free Tier?",
+      "relevant_chunk_ids": [
+        "page-0152-chunk-0001"
+      ],
+      "candidate_chunk_ids": [
+        "page-0044-chunk-0001",
+        "page-0152-chunk-0001",
+        "page-0043-chunk-0001",
+        "page-0086-chunk-0003",
+        "page-0134-chunk-0003",
+        "page-0154-chunk-0001",
+        "page-0038-chunk-0002",
+        "page-0142-chunk-0004",
+        "page-0011-chunk-0001",
+        "page-0084-chunk-0005"
+      ],
+      "retrieved_chunk_ids": [
+        "page-0152-chunk-0001",
+        "page-0142-chunk-0004",
+        "page-0154-chunk-0001",
+        "page-0044-chunk-0001",
+        "page-0011-chunk-0001"
+      ],
+      "retrieved_rankings": [
+        {
+          "rank": 1,
+          "chunk_id": "page-0152-chunk-0001",
+          "page_number": 152,
+          "reranker_score": 7.062169551849365
+        },
+        {
+          "rank": 2,
+          "chunk_id": "page-0142-chunk-0004",
+          "page_number": 142,
+          "reranker_score": 2.227949857711792
+        },
+        {
+          "rank": 3,
+          "chunk_id": "page-0154-chunk-0001",
+          "page_number": 154,
+          "reranker_score": -1.577845573425293
+        },
+        {
+          "rank": 4,
+          "chunk_id": "page-0044-chunk-0001",
+          "page_number": 44,
+          "reranker_score": -3.2561421394348145
+        },
+        {
+          "rank": 5,
+          "chunk_id": "page-0011-chunk-0001",
+          "page_number": 11,
+          "reranker_score": -3.46598482131958
+        }
+      ],
+      "retrieval_metrics": {
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "hit_rate_at_k": 1.0
+      },
+      "latency_ms": 340.998
+    },
+    {
+      "question_id": "q21",
+      "question": "What is the AWS Well-Architected Framework?",
+      "relevant_chunk_ids": [
+        "page-0152-chunk-0002"
+      ],
+      "candidate_chunk_ids": [
+        "page-0111-chunk-0002",
+        "page-0152-chunk-0002",
+        "page-0152-chunk-0003",
+        "page-0155-chunk-0001",
+        "page-0111-chunk-0003",
+        "page-0064-chunk-0002",
+        "page-0138-chunk-0001",
+        "page-0153-chunk-0004",
+        "page-0154-chunk-0001",
+        "page-0097-chunk-0001"
+      ],
+      "retrieved_chunk_ids": [
+        "page-0111-chunk-0002",
+        "page-0152-chunk-0002",
+        "page-0152-chunk-0003",
+        "page-0111-chunk-0003",
+        "page-0155-chunk-0001"
+      ],
+      "retrieved_rankings": [
+        {
+          "rank": 1,
+          "chunk_id": "page-0111-chunk-0002",
+          "page_number": 111,
+          "reranker_score": 7.456043720245361
+        },
+        {
+          "rank": 2,
+          "chunk_id": "page-0152-chunk-0002",
+          "page_number": 152,
+          "reranker_score": 7.3883209228515625
+        },
+        {
+          "rank": 3,
+          "chunk_id": "page-0152-chunk-0003",
+          "page_number": 152,
+          "reranker_score": 7.14711332321167
+        },
+        {
+          "rank": 4,
+          "chunk_id": "page-0111-chunk-0003",
+          "page_number": 111,
+          "reranker_score": 5.552485466003418
+        },
+        {
+          "rank": 5,
+          "chunk_id": "page-0155-chunk-0001",
+          "page_number": 155,
+          "reranker_score": 4.934438228607178
+        }
+      ],
+      "retrieval_metrics": {
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "mrr": 0.5,
+        "hit_rate_at_k": 1.0
+      },
+      "latency_ms": 372.246
+    }
+  ]
+}

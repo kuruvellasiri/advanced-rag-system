@@ -1,0 +1,134 @@
+{
+  "metadata": {
+    "created_at": "2026-11-20T07:42:15.302445+00:00",
+    "dataset": "AWS Overview whitepaper evaluation",
+    "source": "documents/aws-overview.pdf",
+    "top_k": 5,
+    "vector_weight": 0.5,
+    "keyword_weight": 0.5,
+    "mode": "answer_quality_not_run",
+    "status": "not_run_due_to_network_error_in_first_shortlisted_candidate",
+    "generation_errors": 0,
+    "llm_answer_evaluation": false,
+    "reason": "The other shortlisted setting had 21/21 answer-generation failures from blocked outbound socket access. No calls were made for this setting."
+  },
+  "questions": [
+    {
+      "question_id": "q01",
+      "status": "not_run",
+      "reason": "Answer-quality evaluation not run after the first shortlisted setting failed because outbound Gemini API access was blocked."
+    },
+    {
+      "question_id": "q02",
+      "status": "not_run",
+      "reason": "Answer-quality evaluation not run after the first shortlisted setting failed because outbound Gemini API access was blocked."
+    },
+    {
+      "question_id": "q03",
+      "status": "not_run",
+      "reason": "Answer-quality evaluation not run after the first shortlisted setting failed because outbound Gemini API access was blocked."
+    },
+    {
+      "question_id": "q04",
+      "status": "not_run",
+      "reason": "Answer-quality evaluation not run after the first shortlisted setting failed because outbound Gemini API access was blocked."
+    },
+    {
+      "question_id": "q05",
+      "status": "not_run",
+      "reason": "Answer-quality evaluation not run after the first shortlisted setting failed because outbound Gemini API access was blocked."
+    },
+    {
+      "question_id": "q06",
+      "status": "not_run",
+      "reason": "Answer-quality evaluation not run after the first shortlisted setting failed because outbound Gemini API access was blocked."
+    },
+    {
+      "question_id": "q07",
+      "status": "not_run",
+      "reason": "Answer-quality evaluation not run after the first shortlisted setting failed because outbound Gemini API access was blocked."
+    },
+    {
+      "question_id": "q08",
+      "status": "not_run",
+      "reason": "Answer-quality evaluation not run after the first shortlisted setting failed because outbound Gemini API access was blocked."
+    },
+    {
+      "question_id": "q09",
+      "status": "not_run",
+      "reason": "Answer-quality evaluation not run after the first shortlisted setting failed because outbound Gemini API access was blocked."
+    },
+    {
+      "question_id": "q10",
+      "status": "not_run",
+      "reason": "Answer-quality evaluation not run after the first shortlisted setting failed because outbound Gemini API access was blocked."
+    },
+    {
+      "question_id": "q11",
+      "status": "not_run",
+      "reason": "Answer-quality evaluation not run after the first shortlisted setting failed because outbound Gemini API access was blocked."
+    },
+    {
+      "question_id": "q12",
+      "status": "not_run",
+      "reason": "Answer-quality evaluation not run after the first shortlisted setting failed because outbound Gemini API access was blocked."
+    },
+    {
+      "question_id": "q13",
+      "status": "not_run",
+      "reason": "Answer-quality evaluation not run after the first shortlisted setting failed because outbound Gemini API access was blocked."
+    },
+    {
+      "question_id": "q14",
+      "status": "not_run",
+      "reason": "Answer-quality evaluation not run after the first shortlisted setting failed because outbound Gemini API access was blocked."
+    },
+    {
+      "question_id": "q15",
+      "status": "not_run",
+      "reason": "Answer-quality evaluation not run after the first shortlisted setting failed because outbound Gemini API access was blocked."
+    },
+    {
+      "question_id": "q16",
+      "status": "not_run",
+      "reason": "Answer-quality evaluation not run after the first shortlisted setting failed because outbound Gemini API access was blocked."
+    },
+    {
+      "question_id": "q17",
+      "status": "not_run",
+      "reason": "Answer-quality evaluation not run after the first shortlisted setting failed because outbound Gemini API access was blocked."
+    },
+    {
+      "question_id": "q18",
+      "status": "not_run",
+      "reason": "Answer-quality evaluation not run after the first shortlisted setting failed because outbound Gemini API access was blocked."
+    },
+    {
+      "question_id": "q19",
+      "status": "not_run",
+      "reason": "Answer-quality evaluation not run after the first shortlisted setting failed because outbound Gemini API access was blocked."
+    },
+    {
+      "question_id": "q20",
+      "status": "not_run",
+      "reason": "Answer-quality evaluation not run after the first shortlisted setting failed because outbound Gemini API access was blocked."
+    },
+    {
+      "question_id": "q21",
+      "status": "not_run",
+      "reason": "Answer-quality evaluation not run after the first shortlisted setting failed because outbound Gemini API access was blocked."
+    }
+  ],
+  "aggregate": {
+    "questions": 21,
+    "attempted": 0,
+    "not_run": 21,
+    "answer_metrics": {
+      "answer_relevance": null,
+      "faithfulness": null,
+      "context_relevance": null,
+      "correctness": null
+    },
+    "notes": "Not run. Metrics are unknown and must not be interpreted as zero or successful."
+  }
+}

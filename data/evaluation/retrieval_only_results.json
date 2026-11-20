@@ -1,0 +1,61 @@
+{
+  "metadata": {
+    "dataset": "AWS Overview whitepaper evaluation",
+    "source": "documents/aws-overview.pdf",
+    "created_at": "2026-11-19T16:01:49.297501+00:00",
+    "top_k": 5,
+    "vector_weight": 1.0,
+    "keyword_weight": 1.0,
+    "limited_to": 1,
+    "mode": "retrieval_only",
+    "answer_generation": false,
+    "llm_answer_evaluation": false,
+    "retrieval_metrics_type": "deterministic",
+    "answer_metrics_type": "disabled"
+  },
+  "questions": [
+    {
+      "question_id": "q01",
+      "category": "conceptual",
+      "question": "What is cloud computing according to the AWS whitepaper?",
+      "reference_answer": "Cloud computing is the on-demand delivery of compute power, database, storage, applications, and other IT resources through a cloud services platform via the internet with pay-as-you-go pricing. It provides rapid access to flexible and low-cost IT resources without large upfront hardware investments.",
+      "relevant_pages": [
+        12
+      ],
+      "relevant_chunk_ids": [
+        "page-0012-chunk-0001"
+      ],
+      "answer": null,
+      "model_answer": null,
+      "sources": [],
+      "retrieved_chunk_ids": [],
+      "retrieved_pages": [],
+      "retrieval_metrics": null,
+      "answer_metrics": null,
+      "generation_error": null,
+      "retrieval_error": "GeminiEmbeddingError: Gemini rate limit (429) failed after 1 attempt(s): Error embedding content (RESOURCE_EXHAUSTED): 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/embed_content_free_tier_requests, limit: 1000, model: gemini-embedding-1.0, description: Embed content requests per day limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\\nPlease retry in 15h58m11.1096141s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://aistudio.google.com/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'description': 'Embed content requests per day limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.', 'quotaMetric': 'generativelanguage.googleapis.com/embed_content_free_tier_requests', 'quotaId': 'EmbedContentRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-embedding-1.0'}, 'quotaValue': '1000'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '57491s'}]}}",
+      "answer_evaluation_error": null
+    }
+  ],
+  "aggregate": {
+    "questions": 1,
+    "retrieval_questions": 0,
+    "answer_questions": 0,
+    "generation_errors": 0,
+    "retrieval_errors": 1,
+    "answer_evaluation_errors": 0,
+    "retrieval": {
+      "precision_at_k": null,
+      "recall_at_k": null,
+      "mrr": null,
+      "hit_rate_at_k": null
+    },
+    "answer_estimates": {
+      "answer_relevance": null,
+      "faithfulness": null,
+      "context_relevance": null,
+      "correctness": null
+    },
+    "notes": "Retrieval metrics are deterministic. Answer metrics are optional Gemini-generated estimates, not guaranteed factual judgments."
+  }
+}
